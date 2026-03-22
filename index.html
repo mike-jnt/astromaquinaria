@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <style>
 :root {
   --bg: #f3f7fb;
@@ -77,13 +78,13 @@ button, input, textarea { font: inherit; }
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
 }
 .header-inner {
-  min-height: 82px;
+  min-height: 92px;
   display: grid;
   grid-template-columns: auto 1fr auto auto;
   gap: 18px;
   align-items: center;
 }
-.brand img { width: 170px; height: auto; }
+.brand img { width: 220px; height: auto; }
 .main-nav {
   display: flex;
   justify-content: center;
@@ -681,6 +682,81 @@ button, input, textarea { font: inherit; }
   padding: 13px 18px;
   border-radius: 8px;
 }
+
+.support-section {
+  background: #ffffff;
+}
+.support-shell {
+  display: grid;
+  gap: 28px;
+}
+.support-section .section-head {
+  margin-bottom: 0;
+}
+.support-section .section-head p {
+  max-width: 860px;
+  margin-inline: auto;
+}
+.support-trust {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.support-pill {
+  border: 1px solid rgba(18, 38, 58, 0.1);
+  background: #f7faff;
+  color: var(--primary-dark);
+  padding: 10px 14px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.support-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 18px;
+}
+.support-card {
+  background: linear-gradient(180deg, #ffffff 0%, #f6f9fd 100%);
+  border: 1px solid rgba(18, 38, 58, 0.08);
+  border-radius: 14px;
+  padding: 24px 20px;
+  display: grid;
+  align-content: start;
+  gap: 14px;
+  min-height: 100%;
+}
+.support-card-icon {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  background: #050542;
+  color: #ffffff;
+  border-radius: 10px;
+  font-size: 1.05rem;
+}
+.support-card h3 {
+  margin: 0;
+  font-size: 1.08rem;
+  line-height: 1.12;
+}
+.support-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.5;
+}
+.support-cta-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+.support-cta-wrap .button {
+  min-width: 270px;
+}
 .cta-band {
   padding: 0;
   background: transparent;
@@ -717,6 +793,7 @@ button, input, textarea { font: inherit; }
 }
 
 @media (max-width: 900px) {
+  .support-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .cta-band-inner {
     width: 100%;
     min-height: 220px;
@@ -733,6 +810,9 @@ button, input, textarea { font: inherit; }
 }
 
 @media (max-width: 640px) {
+  .support-grid { grid-template-columns: 1fr; }
+  .support-card { padding: 22px 18px; }
+  .support-cta-wrap .button { width: 100%; min-width: 0; }
   .cta-band-inner {
     min-height: 190px;
   }
@@ -1091,11 +1171,11 @@ button, input, textarea { font: inherit; }
   z-index: 60;
   transition: transform .22s ease, box-shadow .22s ease, background .22s ease, border-color .22s ease;
 }
-.floating-whatsapp svg {
-  width: 34px;
-  height: 34px;
-  fill: currentColor;
+.floating-whatsapp i {
+  font-size: 3.55rem;
+  line-height: 1;
   display: block;
+  transform: translateY(1px);
 }
 .floating-whatsapp:hover {
   background: #1ebe5d;
@@ -1124,6 +1204,7 @@ button, input, textarea { font: inherit; }
   .service-card.featured { grid-column: span 1; }
   .services-panel-head,
   .portfolio-support-row { grid-template-columns: 1fr; }
+  .support-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .portfolio-bottom-cta { flex-direction: column; align-items: flex-start; }
   .cert-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
@@ -1163,7 +1244,7 @@ button, input, textarea { font: inherit; }
   .hero { min-height: auto; }
   .hero-copy h1 { font-size: 1.18rem; line-height: 1.2; max-width: 100%; }
   .contact-card { padding: 22px; }
-  .brand img { width: 145px; }
+  .brand img { width: 175px; }
   .logo-item { width: 150px; height: 88px; }
   .services-panel,
   .portfolio-bottom-cta,
@@ -1177,6 +1258,1012 @@ button, input, textarea { font: inherit; }
 @media (max-width: 900px) {
 }
 
+
+
+/* ===== Optimización móvil integral ===== */
+.mobile-quickbar {
+  display: none;
+}
+
+@media (max-width: 980px) {
+  body {
+    padding-bottom: 88px;
+  }
+
+  .container {
+    width: min(100% - 32px, var(--container));
+  }
+
+  .site-header {
+    backdrop-filter: blur(14px);
+  }
+
+  .header-inner {
+    min-height: 78px;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    position: relative;
+  }
+
+  .brand {
+    max-width: min(66vw, 240px);
+  }
+
+  .brand img {
+    width: min(100%, 235px);
+    height: auto;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    border-radius: 0;
+    font-size: 1.15rem;
+    justify-self: end;
+  }
+
+  .main-nav {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.99);
+    border: 1px solid rgba(15,23,42,0.08);
+    box-shadow: 0 18px 40px rgba(15,23,42,0.12);
+    border-radius: 0;
+    padding: 8px 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    overflow: hidden;
+  }
+
+  .main-nav.open {
+    display: flex;
+  }
+
+  .main-nav a {
+    width: 100%;
+    padding: 14px 18px;
+    border-bottom: 1px solid rgba(15,23,42,0.07);
+    font-size: 0.98rem;
+    line-height: 1.2;
+  }
+
+  .main-nav a:last-child {
+    border-bottom: none;
+  }
+
+  .main-nav a::after {
+    display: none;
+  }
+
+  .header-cta {
+    display: none;
+  }
+
+  .section {
+    padding: 68px 0;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 34px 0 22px;
+    background-position: 62% center;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(180deg, rgba(4,10,20,.88) 0%, rgba(5,14,26,.78) 38%, rgba(6,18,32,.62) 100%);
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    align-items: start;
+  }
+
+  .hero-copy {
+    max-width: 100%;
+  }
+
+  .hero-copy .eyebrow {
+    margin-bottom: 10px;
+    font-size: 0.72rem;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(1.18rem, 5.6vw, 1.7rem);
+    line-height: 1.16;
+    max-width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .hero-text {
+    max-width: 100%;
+    font-size: 0.96rem;
+    line-height: 1.55;
+    margin-bottom: 18px;
+    color: rgba(255,255,255,0.84);
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+    min-height: 48px;
+    padding-inline: 14px;
+  }
+
+  .contact-card {
+    order: 2;
+    border-radius: 18px;
+    padding: 22px 18px;
+    margin-top: 6px;
+  }
+
+  .contact-card h2,
+  .contact-card h3 {
+    font-size: 1.32rem;
+    margin-bottom: 6px;
+  }
+
+  .contact-card > p,
+  .bottom-card > p,
+  .form-note {
+    font-size: 0.92rem;
+  }
+
+  .contact-form {
+    gap: 10px;
+  }
+
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form select {
+    min-height: 48px;
+    font-size: 16px;
+    padding: 12px 14px;
+  }
+
+  .contact-form textarea {
+    min-height: 120px;
+  }
+
+  .privacy-check {
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 0.84rem;
+  }
+
+  .logo-item {
+    width: 138px;
+    height: 82px;
+    padding: 12px;
+    border-radius: 16px;
+  }
+
+  .section-head {
+    margin-bottom: 24px;
+  }
+
+  .section-head h2,
+  .contact-copy h2,
+  .support-shell .section-head h2,
+  #certificaciones h2,
+  .section-advantages h2 {
+    font-size: clamp(1.55rem, 7vw, 2.1rem);
+    line-height: 1.1;
+  }
+
+  .section-head p,
+  .panel-summary,
+  .service-proof p,
+  .portfolio-bottom-cta p,
+  .support-shell .section-head p,
+  .contact-copy p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .trust-bar,
+  .support-trust {
+    justify-content: flex-start;
+    gap: 8px;
+    margin-bottom: 18px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .trust-bar::-webkit-scrollbar,
+  .support-trust::-webkit-scrollbar,
+  .tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .trust-chip,
+  .support-pill {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 9px 12px;
+    font-size: 0.71rem;
+    letter-spacing: 0.07em;
+  }
+
+  .tabs {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    margin: 0 0 16px;
+    gap: 10px;
+  }
+
+  .tab-button {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 12px 14px;
+    font-size: 0.86rem;
+  }
+
+  .services-panel {
+    padding: 18px 16px;
+  }
+
+  .services-panel-head {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+
+  .service-panel-cta,
+  .support-cta-wrap .button,
+  .portfolio-actions .button,
+  .contact-actions .button,
+  .contact-card .button-block {
+    width: 100%;
+  }
+
+  .card-grid,
+  .portfolio-grid,
+  .support-grid,
+  .portfolio-support-row,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-grid {
+    gap: 16px;
+  }
+
+  .service-card {
+    min-height: 0 !important;
+    border-radius: 18px;
+    overflow: hidden;
+  }
+
+  .service-card img {
+    aspect-ratio: 16 / 8.2;
+    object-fit: cover;
+  }
+
+  .service-card-body {
+    padding: 14px 14px 16px;
+    gap: 8px;
+  }
+
+  .service-card h4 {
+    font-size: 1.02rem;
+    line-height: 1.2;
+  }
+
+  .service-card p,
+  .service-card li,
+  .service-proof li,
+  .support-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .service-bullets,
+  .service-proof ul {
+    gap: 6px;
+  }
+
+  .portfolio-support-row {
+    gap: 14px;
+    margin-top: 16px;
+  }
+
+  .service-proof,
+  .portfolio-bottom-cta {
+    padding: 20px 18px;
+    border-radius: 18px;
+  }
+
+  .portfolio-bottom-cta {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .portfolio-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .support-shell {
+    gap: 18px;
+  }
+
+  .support-card {
+    border-radius: 18px;
+    padding: 20px 16px;
+    gap: 12px;
+  }
+
+  .support-card-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
+  }
+
+  .cta-band-inner {
+    width: 100%;
+    aspect-ratio: auto;
+    min-height: 190px;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .cta-band-overlay-link {
+    left: 7%;
+    right: 7%;
+    width: auto;
+    height: 17%;
+    top: auto;
+    bottom: 11%;
+  }
+
+  .section-advantages {
+    padding-top: 58px;
+    padding-bottom: 60px;
+  }
+
+  .section-advantages .section-head {
+    margin-bottom: 30px;
+  }
+
+  .advantages-shell {
+    padding: 0 26px;
+  }
+
+  .section-advantages .feature-card {
+    min-height: 0;
+    padding: 28px 20px 22px;
+  }
+
+  .section-advantages .feature-card h3 {
+    font-size: 1.28rem;
+  }
+
+  .section-advantages .feature-card p {
+    max-width: none;
+    font-size: 0.92rem;
+  }
+
+  .carousel-arrow {
+    width: 42px;
+    height: 42px;
+    font-size: 1.45rem;
+  }
+
+  .advantages-progress {
+    width: calc(100% - 52px);
+    margin-top: 24px;
+  }
+
+  .cert-grid {
+    width: min(100%, calc(100% - 24px));
+    gap: 26px 20px;
+  }
+
+  .cert-card {
+    min-height: 78px;
+  }
+
+  .cert-card img {
+    max-height: 62px;
+  }
+
+  .contact-section {
+    padding-bottom: 96px;
+  }
+
+  .contact-grid {
+    gap: 18px;
+    align-items: start;
+  }
+
+  .contact-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .floating-whatsapp {
+    right: 16px;
+    bottom: 100px;
+    width: 66px;
+    height: 66px;
+  }
+
+  .floating-whatsapp i {
+    font-size: 2.7rem;
+  }
+
+  .mobile-quickbar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 70;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    background: rgba(5, 5, 66, 0.98);
+    border-top: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 -8px 26px rgba(5, 5, 66, 0.22);
+    backdrop-filter: blur(12px);
+  }
+
+  .mobile-quickbar a {
+    min-height: 68px;
+    padding: 10px 8px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .mobile-quickbar a:last-child {
+    border-right: none;
+  }
+
+  .mobile-quickbar i {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    padding-bottom: 84px;
+  }
+
+  .container {
+    width: min(100% - 24px, var(--container));
+  }
+
+  .site-header {
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+  }
+
+  .header-inner {
+    min-height: 74px;
+  }
+
+  .brand {
+    max-width: min(70vw, 220px);
+  }
+
+  .brand img {
+    width: min(100%, 205px);
+  }
+
+  .hero {
+    padding-top: 26px;
+  }
+
+  .hero-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card img {
+    aspect-ratio: 16 / 8.8;
+  }
+
+  .feature-card-title {
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .feature-card-accent {
+    height: 22px;
+  }
+
+  .cert-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mobile-quickbar a {
+    min-height: 64px;
+    font-size: 0.7rem;
+  }
+}
+
+
+
+/* ===== Pulido visual móvil premium ===== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 980px) {
+  body {
+    background: #f6f8fc;
+    padding-bottom: 98px;
+  }
+
+  .site-header {
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
+  }
+
+  .header-inner {
+    min-height: 76px;
+  }
+
+  .menu-toggle {
+    width: 44px;
+    height: 44px;
+    border-color: rgba(15,23,42,0.1);
+    background: #fff;
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+  }
+
+  .main-nav {
+    top: calc(100% + 10px);
+    padding: 10px;
+    border-radius: 18px;
+    box-shadow: 0 24px 48px rgba(15, 23, 42, 0.14);
+  }
+
+  .main-nav a {
+    padding: 15px 16px;
+    font-size: 0.97rem;
+    font-weight: 650;
+  }
+
+  .main-nav a:hover {
+    background: #f7faff;
+    color: var(--primary-dark);
+  }
+
+  .main-nav a:last-child {
+    margin-top: 8px;
+    background: #050542;
+    color: #fff;
+    border-bottom: none;
+    text-align: center;
+  }
+
+  .main-nav a:last-child:hover {
+    background: #0a1d73;
+    color: #fff;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .section-head {
+    margin-bottom: 20px;
+  }
+
+  .hero {
+    padding: 20px 0 16px;
+    background-position: 64% center;
+  }
+
+  .hero-copy {
+    padding: 16px 14px 0;
+    border-radius: 22px;
+    background: linear-gradient(180deg, rgba(10, 20, 38, 0.28) 0%, rgba(10, 20, 38, 0) 100%);
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(1.08rem, 5vw, 1.52rem);
+    line-height: 1.14;
+    letter-spacing: -0.02em;
+    max-width: 22ch;
+    margin-bottom: 10px;
+  }
+
+  .hero-text {
+    max-width: 35ch;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .hero-actions {
+    gap: 9px;
+  }
+
+  .hero-actions .button {
+    min-height: 46px;
+    font-size: 0.88rem;
+    letter-spacing: 0.02em;
+  }
+
+  .contact-card,
+  .service-card,
+  .service-proof,
+  .portfolio-bottom-cta,
+  .support-card {
+    box-shadow: 0 18px 36px rgba(3, 24, 44, 0.08);
+  }
+
+  .contact-card {
+    border-radius: 22px;
+    padding: 20px 16px;
+  }
+
+  .contact-card h2,
+  .contact-card h3 {
+    font-size: 1.26rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form select {
+    border-radius: 14px;
+    background: #fbfdff;
+  }
+
+  .trust-bar,
+  .support-trust,
+  .tabs {
+    scroll-padding-left: 2px;
+    overscroll-behavior-x: contain;
+  }
+
+  .services-panel {
+    padding: 16px 14px;
+    border-radius: 22px;
+    background: rgba(255,255,255,0.05);
+  }
+
+  .portfolio-grid {
+    gap: 14px;
+  }
+
+  .service-card {
+    border-radius: 20px;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  }
+
+  .service-card-media {
+    padding: 12px 12px 0;
+  }
+
+  .service-card img {
+    aspect-ratio: 16 / 7.2;
+    border-radius: 14px;
+  }
+
+  .service-card-body {
+    padding: 14px 14px 16px;
+    gap: 9px;
+  }
+
+  .service-card h4 {
+    font-size: 0.98rem;
+    line-height: 1.2;
+  }
+
+  .card-highlight,
+  .card-description,
+  .service-bullets li,
+  .support-card p,
+  .service-proof-copy,
+  .portfolio-bottom-cta p {
+    font-size: 0.9rem;
+    line-height: 1.52;
+  }
+
+  .card-description {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+
+  .service-tag {
+    font-size: 0.64rem;
+    padding: 5px 8px;
+  }
+
+  .service-actions .button,
+  .portfolio-actions .button,
+  .support-cta-wrap .button,
+  .contact-actions .button,
+  .contact-card .button-block {
+    min-height: 46px;
+    width: 100%;
+    min-width: 0;
+    font-size: 0.86rem;
+  }
+
+  .portfolio-support-row {
+    gap: 14px;
+    margin-top: 16px;
+  }
+
+  .service-proof,
+  .portfolio-bottom-cta {
+    padding: 20px 18px;
+    border-radius: 20px;
+  }
+
+  .support-shell {
+    gap: 16px;
+  }
+
+  .support-grid {
+    gap: 14px;
+  }
+
+  .support-card {
+    padding: 18px 16px;
+    border-radius: 20px;
+  }
+
+  .support-card-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+  }
+
+  .section-advantages {
+    padding-top: 54px;
+    padding-bottom: 54px;
+  }
+
+  .section-advantages .section-head {
+    margin-bottom: 26px;
+  }
+
+  .advantages-shell {
+    padding: 0 20px;
+  }
+
+  .section-advantages .feature-card {
+    min-height: auto;
+    padding: 24px 18px 20px;
+    border-radius: 12px;
+  }
+
+  .feature-card-icon {
+    margin-bottom: 14px;
+  }
+
+  .feature-card-icon img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .feature-card-title {
+    margin-bottom: 16px;
+  }
+
+  .section-advantages .feature-card h3 {
+    font-size: 1.22rem;
+  }
+
+  .section-advantages .feature-card p {
+    font-size: 0.9rem;
+    line-height: 1.56;
+  }
+
+  .carousel-arrow {
+    width: 38px;
+    height: 38px;
+    font-size: 1.22rem;
+    background: rgba(255,255,255,0.06);
+  }
+
+  .advantages-progress {
+    width: calc(100% - 40px);
+    margin-top: 20px;
+  }
+
+  .cert-grid {
+    width: min(100%, calc(100% - 20px));
+    gap: 24px 18px;
+  }
+
+  .cert-card {
+    min-height: 74px;
+  }
+
+  .cert-card img {
+    max-height: 58px;
+  }
+
+  .mobile-quickbar {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 18px;
+    overflow: hidden;
+    border-top: none;
+    background: rgba(5, 5, 66, 0.97);
+    box-shadow: 0 18px 40px rgba(5, 5, 66, 0.22);
+  }
+
+  .mobile-quickbar a {
+    min-height: 60px;
+    gap: 4px;
+    padding: 9px 8px 10px;
+    font-size: 0.68rem;
+  }
+
+  .mobile-quickbar i {
+    font-size: 1rem;
+  }
+
+  .floating-whatsapp {
+    width: 62px;
+    height: 62px;
+    right: 14px;
+    bottom: 86px;
+  }
+
+  .floating-whatsapp i {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    padding-bottom: 94px;
+  }
+
+  .header-inner {
+    min-height: 72px;
+  }
+
+  .brand {
+    max-width: min(72vw, 220px);
+  }
+
+  .brand img {
+    width: min(100%, 198px);
+  }
+
+  .hero {
+    padding-top: 18px;
+  }
+
+  .hero-copy {
+    padding: 14px 12px 0;
+  }
+
+  .hero-copy .eyebrow {
+    margin-bottom: 8px;
+    font-size: 0.68rem;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(1.02rem, 5.3vw, 1.34rem);
+    max-width: 23ch;
+  }
+
+  .hero-text {
+    font-size: 0.89rem;
+    line-height: 1.58;
+    max-width: 100%;
+  }
+
+  .contact-card {
+    padding: 18px 14px;
+  }
+
+  .services-panel {
+    padding: 14px 12px;
+  }
+
+  .tab-button {
+    padding: 11px 12px;
+    font-size: 0.82rem;
+  }
+
+  .service-card img {
+    aspect-ratio: 16 / 7.5;
+  }
+
+  .service-card-body {
+    padding: 13px 13px 15px;
+  }
+
+  .service-tag {
+    font-size: 0.62rem;
+  }
+
+  .advantages-shell {
+    padding: 0 18px;
+  }
+
+  .section-advantages .feature-card {
+    padding: 22px 16px 18px;
+  }
+
+  .cert-grid {
+    gap: 20px 16px;
+  }
+
+  .cert-card img {
+    max-height: 54px;
+  }
+
+  .mobile-quickbar {
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    border-radius: 16px;
+  }
+
+  .mobile-quickbar a {
+    min-height: 58px;
+    font-size: 0.66rem;
+  }
+
+  .floating-whatsapp {
+    width: 60px;
+    height: 60px;
+    bottom: 82px;
+  }
+
+  .floating-whatsapp i {
+    font-size: 2.35rem;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1185,10 +2272,11 @@ button, input, textarea { font: inherit; }
       <a class="brand" href="#inicio" aria-label="Ir al inicio">
         <img id="brandLogo" alt="Astro Maquinaria" />
       </a>
-      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">☰</button>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Abrir menú"><i class="fa-solid fa-bars" aria-hidden="true"></i><span class="sr-only">Abrir menú</span></button>
       <nav class="main-nav" id="mainNav">
         <a href="#clientes">Clientes</a>
         <a href="#servicios">Servicios</a>
+        <a href="#soporte">Soporte</a>
         <a href="#marcas">Marcas</a>
         <a href="#certificaciones">Certificaciones</a>
         <a href="#contacto">Contacto</a>
@@ -1279,6 +2367,54 @@ button, input, textarea { font: inherit; }
       </div>
     </section>
 
+
+    <section class="section support-section" id="soporte">
+      <div class="container support-shell">
+        <div class="section-head center">
+          <p class="eyebrow">Soporte técnico</p>
+          <h2>Soporte técnico especializado</h2>
+          <p>Lo acompañamos desde la instalación hasta la puesta en marcha, las pruebas y la capacitación para que su proyecto opere con seguridad, cumplimiento y respaldo posventa.</p>
+        </div>
+        <div class="support-trust" aria-label="Etapas de soporte técnico">
+          <span class="support-pill">Instalación</span>
+          <span class="support-pill">Arranque</span>
+          <span class="support-pill">Verificación</span>
+          <span class="support-pill">Capacitación</span>
+          <span class="support-pill">Posventa</span>
+        </div>
+        <div class="support-grid">
+          <article class="support-card">
+            <div class="support-card-icon"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i></div>
+            <h3>Instalación</h3>
+            <p>Acompañamiento técnico en sitio para una implementación segura, ordenada y alineada con las exigencias del proyecto.</p>
+          </article>
+          <article class="support-card">
+            <div class="support-card-icon"><i class="fa-solid fa-clipboard-check" aria-hidden="true"></i></div>
+            <h3>Precomisionamiento</h3>
+            <p>Revisión de montaje, conexiones y condiciones previas para reducir errores antes de la entrada en operación.</p>
+          </article>
+          <article class="support-card">
+            <div class="support-card-icon"><i class="fa-solid fa-gear" aria-hidden="true"></i></div>
+            <h3>Puesta en operación</h3>
+            <p>Arranque controlado y validación de parámetros para asegurar el desempeño esperado desde el primer día.</p>
+          </article>
+          <article class="support-card">
+            <div class="support-card-icon"><i class="fa-solid fa-vial-circle-check" aria-hidden="true"></i></div>
+            <h3>Pruebas</h3>
+            <p>Verificación técnica en campo para confirmar funcionamiento, respuesta y confiabilidad del sistema instalado.</p>
+          </article>
+          <article class="support-card">
+            <div class="support-card-icon"><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i></div>
+            <h3>Capacitación</h3>
+            <p>Entrenamiento al personal para una operación correcta, seguimiento preventivo y mejor aprovechamiento del equipo.</p>
+          </article>
+        </div>
+        <div class="support-cta-wrap">
+          <a class="button button-primary" id="supportWhatsapp" target="_blank" rel="noopener">Solicitar soporte técnico</a>
+        </div>
+      </div>
+    </section>
+
     <section class="section section-light" id="marcas">
       <div class="container section-head center">
         <p class="eyebrow">Respaldo</p>
@@ -1356,15 +2492,30 @@ button, input, textarea { font: inherit; }
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>Versión estática en HTML, CSS y JS generada a partir de la página original.</p>
+      <p>Todos los derechos reservados a Astro Maquinaria S.A.S.</p>
       <a href="#inicio">Volver arriba ↑</a>
     </div>
   </footer>
 
+  
+
+  <nav class="mobile-quickbar" aria-label="Accesos rápidos para celular">
+    <a href="#servicios">
+      <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+      <span>Portafolio</span>
+    </a>
+    <a href="#soporte">
+      <i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
+      <span>Soporte</span>
+    </a>
+    <a href="#" id="mobileQuickWhatsapp" target="_blank" rel="noopener">
+      <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+      <span>WhatsApp</span>
+    </a>
+  </nav>
+
   <a class="floating-whatsapp" id="floatingWhatsapp" target="_blank" rel="noopener" aria-label="Abrir WhatsApp">
-    <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-      <path d="M19.11 17.21c-.27-.13-1.58-.78-1.83-.87-.24-.09-.42-.13-.6.13-.18.27-.69.87-.85 1.05-.16.18-.31.2-.58.07-.27-.13-1.12-.41-2.14-1.32-.79-.7-1.33-1.57-1.49-1.84-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.6-1.45-.82-1.99-.22-.52-.44-.45-.6-.46h-.51c-.18 0-.47.07-.72.34-.25.27-.94.92-.94 2.24s.96 2.59 1.09 2.77c.13.18 1.88 2.87 4.55 4.03.64.28 1.15.45 1.54.58.65.21 1.24.18 1.7.11.52-.08 1.58-.65 1.8-1.27.22-.63.22-1.16.16-1.27-.07-.11-.24-.18-.51-.31zM16.27 27h-.01a11 11 0 0 1-5.59-1.52L6 26.72l1.28-4.58a11 11 0 1 1 8.99 4.86zm0-20a8.97 8.97 0 0 0-7.69 13.61l.28.45-.76 2.73 2.8-.73.43.25A8.98 8.98 0 1 0 16.27 7z"/>
-    </svg>
+    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
   </a>
 
   <script>
@@ -1670,6 +2821,9 @@ function fillStaticContent() {
   $('#contactEmail').href = siteData.hero.email;
   $('#floatingWhatsapp').href = siteData.hero.whatsapp;
   $('#portfolioWhatsapp').href = siteData.hero.whatsapp;
+  $('#supportWhatsapp').href = siteData.hero.whatsapp;
+  const mobileQuickWhatsapp = $('#mobileQuickWhatsapp');
+  if (mobileQuickWhatsapp) mobileQuickWhatsapp.href = siteData.hero.whatsapp;
 }
 
 function renderMarquee(containerSelector, logos) {
@@ -1707,7 +2861,7 @@ function setupAdvantagesCarousel() {
   let currentIndex = 0;
   let resizeFrame = null;
   let autoplayTimer = null;
-  const AUTOPLAY_DELAY = 1500;
+  const getAutoplayDelay = () => window.innerWidth <= 640 ? 4200 : 1500;
 
   const getVisibleCards = () => {
     if (window.innerWidth <= 640) return 1;
@@ -1765,7 +2919,7 @@ function setupAdvantagesCarousel() {
 
   function restartAutoplay() {
     if (autoplayTimer) clearInterval(autoplayTimer);
-    autoplayTimer = setInterval(goToNextAuto, AUTOPLAY_DELAY);
+    autoplayTimer = setInterval(goToNextAuto, getAutoplayDelay());
   }
 
   prev.addEventListener('click', () => {
@@ -1787,6 +2941,33 @@ function setupAdvantagesCarousel() {
   });
 
   track.parentElement.addEventListener('mouseleave', restartAutoplay);
+
+  let touchStartX = 0;
+  let touchDeltaX = 0;
+
+  track.parentElement.addEventListener('touchstart', (event) => {
+    touchStartX = event.touches[0].clientX;
+    touchDeltaX = 0;
+    if (autoplayTimer) clearInterval(autoplayTimer);
+  }, { passive: true });
+
+  track.parentElement.addEventListener('touchmove', (event) => {
+    touchDeltaX = event.touches[0].clientX - touchStartX;
+  }, { passive: true });
+
+  track.parentElement.addEventListener('touchend', () => {
+    const maxIndex = getMaxIndex();
+    if (Math.abs(touchDeltaX) > 42 && maxIndex > 0) {
+      if (touchDeltaX < 0) {
+        currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
+      } else {
+        currentIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1;
+      }
+      updateCarousel();
+    }
+    restartAutoplay();
+  });
+
 
   window.addEventListener('resize', () => {
     if (resizeFrame) cancelAnimationFrame(resizeFrame);
